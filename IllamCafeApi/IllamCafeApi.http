@@ -1,0 +1,6 @@
+@IllamCafeApi_HostAddress = http://localhost:5237
+
+GET {{IllamCafeApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

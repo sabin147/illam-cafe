@@ -1,0 +1,137 @@
+.filterSection {
+  padding: 110px 24px 34px;
+  background: var(--background);
+}
+
+.filterContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filterContainer > p {
+  margin-bottom: 22px;
+}
+
+.filterBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid rgba(38, 38, 38, 0.1);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.filterBtn {
+  min-width: 108px;
+  padding: 13px 24px 11px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+  background: var(--accent);
+}
+
+.menuSection {
+  padding: 96px 48px 128px;
+  background: var(--background);
+}
+
+.menuHeader {
+  max-width: 1280px;
+  margin: 0 auto 68px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 28px;
+  align-items: end;
+}
+
+.menuHeader p {
+  grid-column: 1 / span 3;
+}
+
+.sectionTitle {
+  grid-column: 4 / span 9;
+  font-size: clamp(72px, 12vw, 170px);
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.state {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 0;
+  text-align: center;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.stateText,
+.errorText,
+.emptyText {
+  color: var(--muted);
+}
+
+.errorText,
+.emptyText {
+  font-size: 20px;
+}
+
+@media (max-width: 1040px) {
+  .menuSection {
+    padding-inline: 24px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .filterSection {
+    padding-top: 82px;
+  }
+
+  .filterBar {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .filterBtn {
+    flex: 1;
+    min-width: 92px;
+  }
+
+  .menuHeader {
+    display: block;
+    margin-bottom: 42px;
+  }
+
+  .sectionTitle {
+    margin-top: 18px;
+    text-align: left;
+    font-size: clamp(56px, 19vw, 92px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,92 @@
+.location {
+  padding: 120px 48px;
+  background: var(--background);
+}
+
+.panel {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 28px;
+  padding: 56px;
+  border-radius: 8px;
+  background: var(--text);
+  color: var(--background);
+}
+
+.copy {
+  grid-column: 1 / span 7;
+}
+
+.copy h2 {
+  margin: 22px 0 24px;
+  color: var(--background);
+  font-size: clamp(56px, 8vw, 116px);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.copy p {
+  max-width: 560px;
+  color: rgba(253, 248, 243, 0.72);
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.cta {
+  display: inline-flex;
+  margin-top: 34px;
+  padding: 14px 32px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.details {
+  grid-column: 8 / span 5;
+  display: grid;
+  align-content: end;
+  gap: 1px;
+  background: rgba(253, 248, 243, 0.14);
+}
+
+.detail {
+  padding: 28px;
+  background: var(--text);
+}
+
+.detail span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.detail p {
+  margin-top: 12px;
+  color: rgba(253, 248, 243, 0.75);
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+@media (max-width: 880px) {
+  .location {
+    padding: 84px 24px;
+  }
+
+  .panel {
+    display: block;
+    padding: 32px;
+  }
+
+  .details {
+    margin-top: 42px;
+  }
+}

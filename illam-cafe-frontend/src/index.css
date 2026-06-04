@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Super Travel Cafe Tokens ──────────────────────── */
+:root {
+  --background: #fdf8f3;
+  --surface: #f5f0eb;
+  --accent: #e4a4bd;
+  --text: #262626;
+  --muted: rgba(38, 38, 38, 0.7);
+  --faint: rgba(38, 38, 38, 0.08);
+  --white: #ffffff;
+  --motion: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --cream: var(--background);
+  --cream-dark: var(--surface);
+  --charcoal: var(--text);
+  --gold: var(--accent);
+  --sage: var(--accent);
+  --sans: 'League Spartan', system-ui, sans-serif;
+  --serif: 'League Spartan', system-ui, sans-serif;
+}
+
+/* ── Reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--background);
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Typography ────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sans);
+  font-weight: 800;
+  line-height: 0.8;
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+h1 { font-size: 48px; }
+h2 { font-size: 42px; }
+h3 { font-size: 32px; }
+h4 { font-size: 24px; }
+
+p {
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes colorShift {
+  from { filter: grayscale(100%); transform: scale(1); }
+  to   { filter: grayscale(0%); transform: scale(1.08); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(5%); }
+}
+
+.anim-up {
+  animation: fadeUp 1s var(--motion) both;
+}
+.anim-up-d1 { animation-delay: 0.15s; }
+.anim-up-d2 { animation-delay: 0.30s; }
+.anim-up-d3 { animation-delay: 0.45s; }
+.anim-up-d4 { animation-delay: 0.60s; }
+
+.anim-left { animation: slideInLeft 1s var(--motion) both; }
+.anim-right { animation: slideInRight 1s var(--motion) both; }
+.anim-scale { animation: scaleIn 1s var(--motion) both; }
+.anim-float { animation: bounce-slow 4s ease-in-out infinite; }
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s var(--motion), transform 1s var(--motion);
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Utility ───────────────────────────────────────── */
+.label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hand-written {
+  font-family: var(--hand);
+  font-size: 48px;
+  color: var(--sage);
+  font-weight: 400;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--sans);
+  cursor: pointer;
+  border: none;
+  transition: all 1s var(--motion);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input, select, textarea {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--background);
+  border: 1px solid var(--faint);
+  border-radius: 8px;
+  padding: 12px 24px;
+  outline: none;
+  width: 100%;
+  transition: all 1s var(--motion);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  background: var(--white);
+  box-shadow: 0 18px 40px rgba(228, 164, 189, 0.18);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23202A2D' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+textarea {
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.7;
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}

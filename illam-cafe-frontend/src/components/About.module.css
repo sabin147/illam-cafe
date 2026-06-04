@@ -1,0 +1,129 @@
+.gallery {
+  padding: 132px 48px 170px;
+  background: var(--background);
+}
+
+.intro {
+  max-width: 1280px;
+  margin: 0 auto 78px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.intro p {
+  grid-column: 1 / span 3;
+}
+
+.intro h2 {
+  grid-column: 4 / span 9;
+  font-size: clamp(64px, 10vw, 146px);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 72px 36px;
+}
+
+.item:nth-child(even) {
+  margin-top: 100px;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 1s var(--motion), transform 1s var(--motion);
+}
+
+.item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+.view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text);
+  color: var(--background);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 1s var(--motion), transform 1s var(--motion);
+}
+
+.item:hover .view {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.category {
+  margin-top: 24px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.item h3 {
+  margin-top: 12px;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.meta {
+  margin-top: 10px;
+  color: rgba(38, 38, 38, 0.52);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .gallery {
+    padding: 96px 24px 128px;
+  }
+
+  .intro {
+    display: block;
+  }
+
+  .intro h2 {
+    margin-top: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .item:nth-child(even) {
+    margin-top: 0;
+  }
+}
